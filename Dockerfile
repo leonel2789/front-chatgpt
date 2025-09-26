@@ -1,20 +1,20 @@
-# Dockerfile (versión simple)
-FROM node:20-alpine
+# Use Node.js official image
+FROM node:18-alpine
 
+# Set working directory
 WORKDIR /app
 
-# Copiar archivos de package
+# Copy package files
 COPY package*.json ./
 
-# Instalar dependencias
+# Install dependencies
 RUN npm ci
 
-# Copiar código fuente
+# Copy source code
 COPY . .
 
+# Expose port
+EXPOSE 5137
 
-# Exponer puerto
-EXPOSE 5173
-
-# Comando para iniciar la aplicación web
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+# Start the application
+CMD ["npm", "run", "web", "--", "--port", "5137"]
