@@ -1,27 +1,22 @@
-# Use Node.js 20 (required for Expo)
-FROM node:20-alpine
+# Dockerfile (versión simple)
+FROM node:18-alpine
 
-# Install serve globally first
-RUN npm install -g serve
-
-# Set working directory
 WORKDIR /app
 
-# Copy package files
+# Copiar archivos de package
 COPY package*.json ./
 
-# Install dependencies
+# Instalar dependencias
 RUN npm ci
 
-# Copy source code
+# Copiar código fuente
 COPY . .
 
-# Expose port
+# Instalar Expo CLI globalmente
+RUN npm install -g @expo/cli
+
+# Exponer puerto
 EXPOSE 5137
 
-# Add healthcheck
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:5137 || exit 1
-
-# Start the development server for web
-CMD ["npm", "run", "web"]
+# Comando para iniciar la aplicación web
+CMD ["npx", "expo", "start", "--web", "--port", "5137"]
