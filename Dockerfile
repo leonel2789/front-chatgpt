@@ -13,10 +13,10 @@ RUN npm ci
 COPY . .
 
 # Instalar Expo CLI globalmente
-RUN npm install -g @expo/cli
+RUN npm install
 
 # Exponer puerto
 EXPOSE 5137
 
 # Comando para iniciar la aplicación web
-CMD ["npx", "expo", "start", "--web", "--port", "5137"]
+CMD ["npx", "expo", "start", "--port", "5137"]
