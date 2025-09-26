@@ -1,31 +1,22 @@
-# Build stage
-FROM node:18-alpine AS builder
+# Dockerfile (versión simple)
+FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy package files
+# Copiar archivos de package
 COPY package*.json ./
 
-# Install all dependencies (including devDependencies for build)
+# Instalar dependencias
 RUN npm ci
 
-# Copy source code
+# Copiar código fuente
 COPY . .
 
-# Build the application
-RUN npm run build
+# Instalar Expo CLI globalmente
+RUN npm install -g @expo/cli
 
-# Production stage
-FROM nginx:alpine
-
-# Copy built assets from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Copy nginx configuration (optional, uses default if not provided)
-# COPY nginx.conf /etc/nginx/nginx.conf
-
-# Expose port 80
+# Exponer puerto
 EXPOSE 80
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Comando para iniciar la aplicación web
+CMD ["npx", "expo", "start", "--web", "--port", "3000"]
