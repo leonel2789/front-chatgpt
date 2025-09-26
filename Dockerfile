@@ -19,4 +19,4 @@ RUN npm install -g @expo/cli
 EXPOSE 80
 
 # Comando para iniciar la aplicación web
-CMD ["npx", "expo", "start", "--web", "--port", "3000"]
+CMD ["npm", "run", "dev"]
