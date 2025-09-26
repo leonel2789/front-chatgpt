@@ -1,12 +1,12 @@
 {
   "name": "front-chatgpt",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web --port 5137"
+    "web": "EXPO_USE_STATIC=true expo start --web --port 5137 --host 0.0.0.0"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.2.0",

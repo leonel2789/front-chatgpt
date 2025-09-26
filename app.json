@@ -21,8 +21,7 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "bundler": "metro",
-      "output": "static"
+      "bundler": "metro"
     }
   }
 }
