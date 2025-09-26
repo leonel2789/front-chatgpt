@@ -14,7 +14,7 @@ COPY . .
 
 
 # Exponer puerto
-EXPOSE 80
+EXPOSE 5173
 
 # Comando para iniciar la aplicación web
 CMD ["npm", "run", "dev"]
