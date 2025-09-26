@@ -1,5 +1,5 @@
 # Dockerfile (versión simple)
-FROM node:18-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
@@ -12,8 +12,6 @@ RUN npm ci
 # Copiar código fuente
 COPY . .
 
-# Instalar Expo CLI globalmente
-RUN npm install -g @expo/cli
 
 # Exponer puerto
 EXPOSE 80
