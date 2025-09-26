@@ -16,7 +16,7 @@ COPY . .
 RUN npm install -g @expo/cli
 
 # Exponer puerto
-EXPOSE 5137
+EXPOSE 3000
 
 # Comando para iniciar la aplicación web
-CMD ["npx", "expo", "start", "--web", "--port", "5137"]
+CMD ["npx", "expo", "start", "--web", "--port", "3000"]
