@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Read(//mnt/c/Users/leofe/OneDrive/Documentos/GitHub/Front-agente-curso/**)"
+      "Read(//mnt/c/Users/leofe/OneDrive/Documentos/GitHub/Front-agente-curso/**)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
