@@ -16,7 +16,7 @@ COPY . .
 RUN npm install
 
 # Exponer puerto
-EXPOSE 3100
+EXPOSE 8081
 
 # Comando para iniciar la aplicación web
 CMD ["npx", "expo", "start"]
