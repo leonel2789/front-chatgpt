@@ -19,4 +19,4 @@ RUN npm install -g @expo/cli
 EXPOSE 3005
 
 # Comando para iniciar la aplicación web
-CMD ["npx", "expo", "start", "--web", "--port", "3005"]
+CMD ["npm", "run", "web:prod"]
