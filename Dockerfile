@@ -12,11 +12,14 @@ RUN npm ci
 # Copiar código fuente
 COPY . .
 
-# Instalar Expo CLI globalmente
-RUN npm install -g @expo/cli
+# Instalar Expo CLI globalmente y serve
+RUN npm install -g @expo/cli serve
+
+# Construir la aplicación para web
+RUN npm run build
 
 # Exponer puerto
 EXPOSE 3005
 
-# Comando para iniciar la aplicación web
-CMD ["npm", "run", "web:prod"]
+# Comando para servir los archivos estáticos
+CMD ["npm", "run", "serve"]
