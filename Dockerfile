@@ -12,8 +12,11 @@ RUN npm ci
 # Copiar código fuente
 COPY . .
 
+# Instalar Expo CLI globalmente
+RUN npm install -g @expo/cli
+
 # Exponer puerto
-EXPOSE 8081
+EXPOSE 3005
 
 # Comando para iniciar la aplicación web
-CMD ["npx", "expo", "start"]
+CMD ["npx", "expo", "start", "--web", "--port", "3005"]

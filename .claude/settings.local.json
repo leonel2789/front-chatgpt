@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//mnt/c/Users/leofe/OneDrive/Documentos/GitHub/Front-agente-curso/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
