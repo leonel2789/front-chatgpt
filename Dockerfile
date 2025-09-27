@@ -12,9 +12,6 @@ RUN npm ci
 # Copiar código fuente
 COPY . .
 
-# Instalar Expo CLI globalmente
-RUN npm install
-
 # Exponer puerto
 EXPOSE 8081
 
