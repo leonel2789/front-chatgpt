@@ -12,8 +12,8 @@ RUN npm ci
 # Copiar código fuente
 COPY . .
 
-# Instalar Expo CLI globalmente y serve
-RUN npm install -g @expo/cli serve
+# Instalar Expo CLI globalmente
+RUN npm install -g @expo/cli
 
 # Construir la aplicación para web
 RUN npm run build
